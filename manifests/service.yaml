@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ContosoAir
+spec:
+  type: LoadBalancer
+  selector:
+    app: ContosoAir
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
