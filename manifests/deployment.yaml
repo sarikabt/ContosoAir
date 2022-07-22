@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ContosoAir
+  name: contosoair
   labels:
-    app: ContosoAir
+    app: contosoair
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ContosoAir
+      app: contosoair
   template:
     metadata:
       labels:
-        app: ContosoAir
+        app: contosoair
     spec:
       containers:
-        - name: ContosoAir
-          image: ContosoAir
+        - name: contosoair
+          image: contosoair
           ports:
             - containerPort: 8080
