@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: contosoair
-          image: myAKSClusterregistryq.azurecr.io/contosoair
+          image: ContosoAirACR.azurecr.io/contosoair
           ports:
             - containerPort: 8080
