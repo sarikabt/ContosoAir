@@ -7,7 +7,7 @@ name: ContosoAir
 env:
     ACR_RESOURCE_GROUP: myAKSClusterregistry
     AZURE_CONTAINER_REGISTRY: ContosoAirACR
-    CLUSTER_NAME: myAKSCluster
+    CLUSTER_NAME: myCluster
     CLUSTER_RESOURCE_GROUP: myResourceGroup
     CONTAINER_NAME: contosoair
     DEPLOYMENT_MANIFEST_PATH: |
@@ -24,9 +24,7 @@ jobs:
             - uses: azure/login@v1.4.3
               name: Azure login
               with:
-                client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-                tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                creds: ${{ secrets.AzureSPN }}
             - name: Build and push image to ACR
               run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f ./Dockerfile ./
     deploy:
@@ -42,9 +40,7 @@ jobs:
             - uses: azure/login@v1.4.3
               name: Azure login
               with:
-                client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-                tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                creds: ${{ secrets.AzureSPN }}
             - uses: azure/aks-set-context@v3
               name: Get K8s context
               with:
