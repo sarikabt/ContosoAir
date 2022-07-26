@@ -7,7 +7,7 @@ name: ContosoAir
 env:
     ACR_RESOURCE_GROUP: AKSdemo
     AZURE_CONTAINER_REGISTRY: ContosoAirACRdemo
-    CLUSTER_NAME: myAKSCluster
+    CLUSTER_NAME: contoso-air
     CLUSTER_RESOURCE_GROUP: AKSdemo
     CONTAINER_NAME: contosoair
     DEPLOYMENT_MANIFEST_PATH: |
