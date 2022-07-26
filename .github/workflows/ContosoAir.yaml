@@ -5,7 +5,7 @@ name: ContosoAir
             - main
     workflow_dispatch: {}
 env:
-    ACR_RESOURCE_GROUP: myAKSClusterregistry
+    ACR_RESOURCE_GROUP: AKSdemo
     AZURE_CONTAINER_REGISTRY: ContosoAirACR
     CLUSTER_NAME: myAKSCluster
     CLUSTER_RESOURCE_GROUP: myResourceGroup
