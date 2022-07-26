@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: contosoair
-          image: ContosoAirACR.azurecr.io/contosoair
+          image: contosoairacrdemo.azurecr.io/contosoair
           ports:
             - containerPort: 8080
